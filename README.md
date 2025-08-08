@@ -1,1 +1,1 @@
-![video](./screenshots/rice.mp4)
+[video](./screenshots/rice.mp4)

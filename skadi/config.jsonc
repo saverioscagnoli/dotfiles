@@ -1,0 +1,16 @@
+{
+  "windows": [
+    {
+      "label": "topbar",
+      "monitor": "DP-1",
+      "x": 0,
+      "y": 4,
+      "width": "99.5%",
+      "height": "40",
+      "anchor": "top center",
+      "exclusive": true,
+      "plugins": ["./plugins/topbar.tsx"],
+      "styles": ["./styles/topbar.css"]
+    }
+  ]
+}

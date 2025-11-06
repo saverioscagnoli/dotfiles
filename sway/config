@@ -1,0 +1,26 @@
+# Environment config, such as variables, starting scripts, etc.
+include ~/.config/sway/env.conf
+
+# Monitor setup, clamshell mode
+include ~/.config/sway/monitors.conf
+
+# Disable mouse acceleration
+input * { 
+    accel_profile "flat"
+    pointer_accel 0
+}
+
+# Keyboard layout
+input type:keyboard {
+    xkb_layout "us"
+    xkb_variant "intl"
+}
+
+# Keybindings
+include ~/.config/sway/bindings.conf
+
+# Aesthetics
+include ~/.config/sway/deco.conf
+
+include /etc/sway/config.d/*
+

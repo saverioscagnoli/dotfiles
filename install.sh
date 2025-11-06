@@ -56,7 +56,7 @@ fi
 
 echo -e "${GREEN}Installing sway...${NC}"
 
-dnf install sway wofi -y
+dnf install sway wofi mako telegram-desktop dolphin -y
 
 mkdir -p $CACHE_DIR
 
@@ -81,8 +81,6 @@ echo -e "${GREEN}Linking...${NC}"
 
 DOTFILES_DIR="${USER_HOME}/.dotfiles"
 CONFIG_DIR="${USER_HOME}/.config"
-
-mkdir -p $CONFIG_DIR
 
 ln -sf "$DOTFILES_DIR/sway"      "$CONFIG_DIR/sway"
 ln -sf "$DOTFILES_DIR/foot"      "$CONFIG_DIR/foot"

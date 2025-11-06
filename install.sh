@@ -86,5 +86,7 @@ ln -sf "$DOTFILES_DIR/sway"      "$CONFIG_DIR/sway"
 ln -sf "$DOTFILES_DIR/foot"      "$CONFIG_DIR/foot"
 ln -sf "$DOTFILES_DIR/gtk-3.0"   "$CONFIG_DIR/gtk-3.0"
 ln -sf "$DOTFILES_DIR/gtk-4.0"   "$CONFIG_DIR/gtk-4.0"
+ln -sf "$DOTFILES_DIR/.bashrc"	 "$USER_HOME/.bashrc"
 
+source "$USER_HOME/.bashrc"
 echo -e "${GREEN}Done!!${NC}" 

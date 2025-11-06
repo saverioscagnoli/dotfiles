@@ -24,13 +24,23 @@ alias ll='pls -a'
 alias ff='fastfetch'
 alias c='clear'
 
+# Start vscode under wayland
+alias code="code --enable-features=UseOzonePlatform --ozone-platform=$XDG_SESSION_TYPE"
 
-# Git branch function
 git_branch() {
-    git rev-parse --is-inside-work-tree &>/dev/null || return
-    git branch 2>/dev/null | sed -n '/\* /s/^* \(.*\)/  \1/p'
+    local branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    if [ -n "$branch" ]; then
+        echo " ($branch)"
+    fi
 }
 
-PS1='\[\033[96m\]\W\[\033[93m\]$(git_branch)\[\033[0m\] > '
+COLOR_USER="\[\033[36m\]"      # Cyan
+COLOR_HOST="\[\033[32m\]"      # Green
+COLOR_PATH="\[\033[34m\]"      # Blue
+COLOR_GIT="\[\033[33m\]"       # Yellow
+COLOR_AT="\[\033[37m\]"        # White
+COLOR_RESET="\[\033[0m\]"
+
+PS1="${COLOR_USER}\u${COLOR_AT}@${COLOR_HOST}\h ${COLOR_PATH}\w${COLOR_GIT}\$(git_branch)${COLOR_RESET} \$ "
 
 . "$HOME/.cargo/env"

@@ -20,7 +20,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 alias ls='pls'
-alias ll='pls -a'
+alias ll='pls -ap	'
 alias ff='fastfetch'
 alias c='clear'
 
@@ -44,3 +44,7 @@ COLOR_RESET="\[\033[0m\]"
 PS1="${COLOR_USER}\u${COLOR_AT}@${COLOR_HOST}\h ${COLOR_PATH}\w${COLOR_GIT}\$(git_branch)${COLOR_RESET} \$ "
 
 . "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

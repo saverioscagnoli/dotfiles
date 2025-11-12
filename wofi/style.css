@@ -1,0 +1,64 @@
+window {
+    margin: 0px;
+    border: 2px solid rgba(100, 100, 255, 0.5);
+    border-radius: 12px;
+    background-color: rgba(20, 20, 30, 0.85);
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 14px;
+}
+
+#input {
+    margin: 8px;
+    padding: 12px;
+    border: 2px solid rgba(100, 100, 255, 0.4);
+    border-radius: 8px;
+    background-color: rgba(30, 30, 40, 0.9);
+    color: #e0e0e0;
+}
+
+#input:focus {
+    border: 2px solid rgba(120, 120, 255, 0.7);
+    background-color: rgba(35, 35, 50, 0.95);
+}
+
+#inner-box {
+    margin: 8px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    color: #e0e0e0;
+}
+
+#entry {
+    padding: 8px;
+    margin: 2px;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+#entry:selected {
+    background-color: rgba(100, 100, 255, 0.3);
+    border: 1px solid rgba(120, 120, 255, 0.5);
+}
+
+#entry:hover {
+    background-color: rgba(80, 80, 200, 0.2);
+}
+
+#text:selected {
+    color: #ffffff;
+}

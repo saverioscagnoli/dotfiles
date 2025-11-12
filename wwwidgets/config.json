@@ -1,0 +1,17 @@
+{
+  "widgets": [
+    {
+      "monitors": ["all"],
+      "label": "topbar",
+      "width": "99.5%",
+      "height": 35,
+      "x": 0,
+      "y": 5,
+      "anchor": "top center",
+      "exclusive": true,
+      "index": "topbar/topbar.tsx",
+      "background": [0, 0, 0],
+      "opacity": 1.0
+    }
+  ]
+}

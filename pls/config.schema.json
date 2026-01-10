@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PLS Configuration Schema",
+  "description": "Schema for the configuration file of PLS.",
+  "type": "object",
+  "properties": {
+    "ls": {
+      "type": "object",
+      "description": "List command configuration.",
+      "default": {},
+      "properties": {
+        "format": {
+          "type": "array",
+          "description": "The output format order using template variables like {name}, {kind}, etc.",
+          "items": { "type": "string" }
+        },
+        "padding": {
+          "type": "integer",
+          "description": "Number of spaces between columns.",
+          "default": 2,
+          "minimum": 0
+        },
+        "headers": {
+          "type": "array",
+          "description": "Table headers (should be the same length as the format array)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "icon": {
+          "$ref": "#/$defs/IfString",
+          "description": "Conditional icons based on file type."
+        },
+        "styles": {
+          "type": "object",
+          "description": "Mapping of named styles (like kind or permissions) to conditional style rules.",
+          "properties": {
+            "name": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "path": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "extension": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "kind": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "depth": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "size": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "permissions": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "created": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "modified": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "accessed": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "owner": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "group": {
+              "$ref": "#/$defs/IfStyle"
+            },
+            "nlink": {
+              "$ref": "#/$defs/IfStyle"
+            }
+          },
+          "default": {}
+        },
+        "size_unit": {
+          "type": "string",
+          "description": "Controls how file sizes are displayed.",
+          "enum": ["auto", "b", "kb", "mb", "gb", "tb"],
+          "default": "auto"
+        },
+        "created_fmt": {
+          "type": "string",
+          "description": "Date/time format for file creation timestamp.",
+          "default": "%b %d %H:%M"
+        },
+        "modified_fmt": {
+          "type": "string",
+          "description": "Date/time format for file modification timestamp.",
+          "default": "%b %d %H:%M"
+        },
+        "accessed_fmt": {
+          "type": "string",
+          "description": "Date/time format for file access timestamp.",
+          "default": "%b %d %H:%M"
+        }
+      },
+      "required": []
+    }
+  },
+  "required": ["ls"],
+  "$defs": {
+    "IfString": {
+      "type": "object",
+      "description": "Conditional string configuration.",
+      "properties": {
+        "default": {
+          "type": "string",
+          "description": "Default string value."
+        },
+        "conditions": {
+          "type": "array",
+          "description": "Conditional rules that map variable comparisons to results.",
+          "items": { "$ref": "#/$defs/ConditionString" },
+          "default": []
+        }
+      },
+      "default": {
+        "default": "f",
+        "conditions": [
+          {
+            "variable": "kind",
+            "op": "eq",
+            "value": "directory",
+            "result": "d"
+          }
+        ]
+      }
+    },
+    "IfStyle": {
+      "type": "object",
+      "description": "Conditional style configuration.",
+      "properties": {
+        "default": {
+          "$ref": "#/$defs/Style",
+          "description": "Default style applied if no conditions match."
+        },
+        "conditions": {
+          "type": "array",
+          "description": "Conditional style rules.",
+          "items": { "$ref": "#/$defs/ConditionStyle" },
+          "default": []
+        }
+      },
+      "default": {
+        "default": {},
+        "conditions": []
+      }
+    },
+    "ConditionString": {
+      "type": "object",
+      "description": "A conditional mapping for a string result.",
+      "properties": {
+        "variable": { "type": "string" },
+        "op": {
+          "type": "string",
+          "enum": [
+            "==",
+            "!=",
+            ">",
+            "<",
+            ">=",
+            "<=",
+            "eq",
+            "ne",
+            "gt",
+            "lt",
+            "gte",
+            "lte"
+          ]
+        },
+        "value": { "type": "string" },
+        "result": { "type": "string" }
+      },
+      "required": ["variable", "op", "value", "result"]
+    },
+    "ConditionStyle": {
+      "type": "object",
+      "description": "A conditional mapping for a style result.",
+      "properties": {
+        "variable": { "type": "string" },
+        "op": {
+          "type": "string",
+          "enum": [
+            "==",
+            "!=",
+            ">",
+            "<",
+            ">=",
+            "<=",
+            "eq",
+            "ne",
+            "gt",
+            "lt",
+            "gte",
+            "lte"
+          ]
+        },
+        "value": { "type": "string" },
+        "result": { "$ref": "#/$defs/Style" }
+      },
+      "required": ["variable", "op", "value", "result"]
+    },
+    "Style": {
+      "type": "object",
+      "description": "Defines text color, background, and style.",
+      "properties": {
+        "foreground": { "$ref": "#/$defs/Color" },
+        "background": { "$ref": "#/$defs/Color" },
+        "text": {
+          "type": "array",
+          "description": "List of text styles to apply.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "normal",
+              "bold",
+              "italic",
+              "underline",
+              "dim",
+              "strikethrough",
+              "blink",
+              "inverse",
+              "conceal",
+              "crossed out",
+              "double underline"
+            ]
+          },
+          "default": []
+        }
+      },
+      "default": {}
+    },
+    "Color": {
+      "description": "Color definition. Can be a named color, RGB tuple, hex code, or ANSI code.",
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "Named or hex color (e.g., 'red' or '#FF0000')."
+        },
+        {
+          "type": "array",
+          "description": "RGB triplet, e.g., [255, 0, 0].",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "integer",
+          "description": "ANSI color code (0–255).",
+          "minimum": 0,
+          "maximum": 255
+        }
+      ],
+      "examples": ["red", "#00FF00", [128, 0, 128], 196],
+      "default": "white"
+    }
+  }
+}

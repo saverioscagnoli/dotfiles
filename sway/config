@@ -1,26 +1,20 @@
-# Environment config, such as variables, starting scripts, etc.
-include ~/.config/sway/env.conf
 
-# Monitor setup, clamshell mode
-include ~/.config/sway/monitors.conf
 
-# Disable mouse acceleration
-input * { 
-    accel_profile "flat"
-    pointer_accel 0
-}
+set $mod Mod4
 
-# Keyboard layout
-input type:keyboard {
-    xkb_layout "us"
-    xkb_variant "intl"
-}
+set $left h
+set $down j
+set $up k
+set $right l
 
-# Keybindings
+set $term foot
+set $menu wofi --show drun --allow-images
+set $file dolphin
+
+include ~/.config/sway/output.conf
 include ~/.config/sway/bindings.conf
+include ~/.config/sway/look.conf
+include ~/.config/sway/input.conf
 
-# Aesthetics
-include ~/.config/sway/deco.conf
-
-include /etc/sway/config.d/*
-
+exec /usr/libexec/sway-systemd/session.sh
+exec /usr/libexec/sway-systemd/assign-cgroups.py

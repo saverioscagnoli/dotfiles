@@ -1,0 +1,271 @@
+{
+  "$schema": "./config.schema.json",
+  "ls": {
+    "format": [
+      "{ :depth}{icon}  {name}",
+      "{permissions}",
+      "{size>}",
+      "{modified^}",
+      "\u001B[33m-> {nlink}\u001B[0m"
+    ],
+    "styles": {
+      "name": {
+        "conditions": [
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "directory",
+            "result": {
+              "foreground": "blue",
+              "text": ["bold"]
+            }
+          },
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "symlink_file",
+            "result": {
+              "foreground": "yellow",
+              "text": ["bold"]
+            }
+          },
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "symlink_directory",
+            "result": {
+              "foreground": "magenta",
+              "text": ["bold"]
+            }
+          },
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "executable",
+            "result": {
+              "foreground": "green",
+              "text": ["bold"]
+            }
+          },
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "broken_symlink",
+            "result": {
+              "foreground": "white",
+              "background": "red",
+              "text": ["bold", "blink"]
+            }
+          }
+        ]
+      },
+      "icon": {
+        "conditions": [
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "directory",
+            "result": {
+              "foreground": "blue",
+              "text": ["bold"]
+            }
+          },
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "symlink_file",
+            "result": {
+              "foreground": "yellow",
+              "text": ["bold"]
+            }
+          },
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "symlink_directory",
+            "result": {
+              "foreground": "magenta",
+              "text": ["bold"]
+            }
+          },
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "executable",
+            "result": {
+              "foreground": "green",
+              "text": ["bold"]
+            }
+          },
+          {
+            "variable": "kind",
+            "op": "==",
+            "value": "broken_symlink",
+            "result": {
+              "foreground": "red",
+              "text": ["bold", "blink"]
+            }
+          }
+        ]
+      },
+      "permissions": {
+        "default": {
+          "foreground": "gray"
+        }
+      },
+      "modified": {
+        "default": {
+          "foreground": "gray"
+        }
+      },
+      "nlink": {
+        "default": {
+          "text": ["bold"]
+        }
+      }
+    },
+    "icon": {
+      "default": "󰈔",
+      "conditions": [
+        {
+          "variable": "extension",
+          "op": "==",
+          "value": "lock",
+          "result": "󰈡"
+        },
+        {
+          "variable": "extension",
+          "op": "==",
+          "value": "toml",
+          "result": ""
+        },
+        {
+          "variable": "extension",
+          "op": "==",
+          "value": "json",
+          "result": ""
+        },
+        {
+          "variable": "extension",
+          "op": "==",
+          "value": "jsonc",
+          "result": ""
+        },
+        {
+          "variable": "extension",
+          "op": "==",
+          "value": "json5",
+          "result": ""
+        },
+        {
+          "variable": "extension",
+          "op": "==",
+          "value": "conf",
+          "result": ""
+        },
+        {
+          "variable": "extension",
+          "op": "==",
+          "value": "ini",
+          "result": ""
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": ".gitignore",
+          "result": ""
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": "Desktop",
+          "result": "󱂵"
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": "Documents",
+          "result": "󰲂"
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": "Downloads",
+          "result": "󰉍"
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": "Music",
+          "result": "󱍙"
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": "Pictures",
+          "result": "󰉏"
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": "Public",
+          "result": "󰉌"
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": "Videos",
+          "result": "󱧺"
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": ".git",
+          "result": "󰊢"
+        },
+        {
+          "variable": "name",
+          "op": "==",
+          "value": "src",
+          "result": "󱧼"
+        },
+        {
+          "variable": "kind",
+          "op": "==",
+          "value": "directory",
+          "result": "󰉋"
+        },
+        {
+          "variable": "kind",
+          "op": "==",
+          "value": "directory",
+          "result": "󰈔"
+        },
+        {
+          "variable": "kind",
+          "op": "==",
+          "value": "symlink_file",
+          "result": "󱅷"
+        },
+        {
+          "variable": "kind",
+          "op": "==",
+          "value": "symlink_directory",
+          "result": "󱧪"
+        },
+        {
+          "variable": "kind",
+          "op": "==",
+          "value": "executable",
+          "result": "󰩋"
+        },
+        {
+          "variable": "kind",
+          "op": "==",
+          "value": "broken_symlink",
+          "result": "󱅸"
+        }
+      ]
+    }
+  }
+}

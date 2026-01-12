@@ -52,7 +52,7 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PS1="${GREY}[${PURPLE}%n${GREY}@${BLUE}%m${GREY}] ${CYAN}%~${PINK}\$(parse_git_branch)
 ${GREEN}  ${RESET}"

@@ -1,0 +1,68 @@
+@define-color overlay #45475a;
+@define-color text    #cdd6f4;
+@define-color subtext #a6adc8;
+@define-color mauve   #cba6f7;
+@define-color peach   #fab387;
+
+* {
+    font-family: 'Iosevka', monospace;
+    font-weight: 600;
+}
+
+window {
+    background-color: rgba(30, 30, 46, 0.80);
+    border-radius: 12px;
+    border: 2px solid @mauve;
+}
+
+#input {
+    background-color: rgba(49, 50, 68, 0.6);
+    color: @text;
+    border: none;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 10px;
+}
+
+#input:focus {
+    box-shadow: 0 0 5px @mauve;
+}
+
+#inner-box {
+    margin: 10px;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    color: @text;
+    margin: 5px;
+}
+
+#entry {
+    background-color: transparent;
+    border-radius: 8px;
+    margin: 2px 10px;
+    padding: 5px;
+    border: none;
+}
+
+#entry:selected {
+    background-color: rgba(69, 71, 90, 0.6);
+    outline: none;
+}
+
+#entry:selected #text {
+    color: @mauve;
+    font-weight: bold;
+}

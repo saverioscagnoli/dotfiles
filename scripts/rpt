@@ -1,0 +1,30 @@
+#!/bin/bash
+
+clear_screen=false
+
+if [ "$1" = "--clear" ]; then
+    clear_screen=true
+    shift
+fi
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 [--clear] <seconds> <command>"
+    echo "Example: $0 5 date"
+    echo "Example: $0 --clear 5 date"
+    exit 1
+fi
+
+interval=$1
+shift
+command="$@"
+
+while true; do
+    if [ "$clear_screen" = true ]; then
+        clear
+        echo "Running: $command"
+        echo "Interval: ${interval}s"
+        echo "---"
+    fi
+    eval "$command"
+    sleep "$interval"
+done

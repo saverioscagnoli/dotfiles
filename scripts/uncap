@@ -1,1 +1,14 @@
-ryzenadj --max-performance --tctl-temp=90 --apu-skin-temp=90
+ ryzenadj \
+  --max-performance \
+  --apu-skin-temp=90 \
+  --stapm-limit=25000 \
+  --fast-limit=30000 \
+  --slow-limit=28000 \
+  --tctl-temp=90 \
+  --stapm-time=64 \
+  --slow-time=128 \
+  --vrm-current=60000 \
+  --vrmmax-current=65000 \
+  --vrmsoc-current=28000 \
+  --vrmsocmax-current=30000 \
+  --vrmgfx-current=25000

@@ -11,6 +11,8 @@ set $term foot
 set $menu wofi --show drun --allow-images
 set $file dolphin
 
+
+include ~/.config/sway/env.conf
 include ~/.config/sway/output.conf
 include ~/.config/sway/bindings.conf
 include ~/.config/sway/look.conf

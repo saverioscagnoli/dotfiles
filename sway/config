@@ -16,3 +16,14 @@ include ~/.config/sway/bindings.conf
 include ~/.config/sway/look.conf
 
 include ~/.config/sway/input.conf
+
+bar {
+    position bottom
+    status_command i3status
+    
+    colors {
+        statusline #ffffff
+        background #000000
+        inactive_workspace #000000 #000000 #5c5c5c
+    }
+}

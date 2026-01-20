@@ -17,8 +17,6 @@ fi
 
 export PATH
 
-. "$HOME/.cargo/env"
-
 # Helpers
 
 mkcd() {

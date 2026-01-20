@@ -1,0 +1,3 @@
+#!/bin/sh
+exec 2>&1
+exec /usr/local/bin/rpt 5 /usr/local/bin/uncap

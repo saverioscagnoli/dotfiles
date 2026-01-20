@@ -1,0 +1,41 @@
+format = [
+    "{ :depth}{icon} {name}",
+    "{perms}",
+    "{size}",
+    "{modified}",
+]
+padding = 2
+size_unit = "auto"
+date_format = "%b %d %H:%M"
+pattern = []
+rules = []
+
+[icon]
+default = "󰈔"
+directory = "󰉋"
+executable = "󰩋"
+symlink = "󱅷"
+broken_symlink = "󱅸"
+when = []
+
+[icon.ext]
+
+[icon.name]
+
+[style.name]
+when = []
+
+[style.permissions]
+when = []
+
+[style.size]
+when = []
+
+[style.modified]
+when = []
+
+[style.created]
+when = []
+
+[style.accessed]
+when = []

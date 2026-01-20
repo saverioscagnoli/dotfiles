@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
   "tab_bar": {
     "show": false,
   },
@@ -27,10 +36,25 @@
     "background.appearance": "transparent",
   },
   "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "buffer_font_size": 15.0,
   "theme": {
     "mode": "dark",
     "light": "One Light",
     "dark": "VSCode Dark Modern",
+  },
+
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "rustfmt": {
+          "extraArgs": ["+nightly"],
+        },
+      },
+    },
+  },
+  "languages": {
+    "Rust": {
+      "format_on_save": "on",
+    },
   },
 }

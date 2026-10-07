@@ -1,0 +1,12 @@
+# Dark title bars to match waybar (#252525)
+window.active.title.bg.color: #252525
+window.inactive.title.bg.color: #252525
+
+window.active.border.color: #252525
+window.inactive.border.color: #252525
+
+window.active.label.text.color: #e6e6e6
+window.inactive.label.text.color: #7a7a7a
+
+window.active.button.unpressed.image.color: #e6e6e6
+window.inactive.button.unpressed.image.color: #7a7a7a

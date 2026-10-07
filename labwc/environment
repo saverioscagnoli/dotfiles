@@ -1,0 +1,7 @@
+# Qt/KDE apps (Dolphin etc.) read their colours from ~/.config/kdeglobals
+# through the KDE platform plugin (package: plasma-integration)
+QT_QPA_PLATFORMTHEME=kde
+
+# Keyboard layout: US International
+XKB_DEFAULT_LAYOUT=us
+XKB_DEFAULT_VARIANT=altgr-intl

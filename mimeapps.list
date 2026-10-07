@@ -1,0 +1,17 @@
+[Added Associations]
+video/x-matroska=mpv-3.desktop;mpv-2.desktop;
+
+[Default Applications]
+video/x-matroska=mpv-3.desktop;
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/rshub=jagex-launcher.desktop
+x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
+image/png=org.kde.gwenview.desktop
+image/jpeg=org.kde.gwenview.desktop
+image/gif=org.kde.gwenview.desktop
+image/webp=org.kde.gwenview.desktop
+image/bmp=org.kde.gwenview.desktop
+image/tiff=org.kde.gwenview.desktop
+image/svg+xml=org.kde.gwenview.desktop
+image/avif=org.kde.gwenview.desktop
+image/heic=org.kde.gwenview.desktop

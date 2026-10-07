@@ -1,0 +1,7 @@
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+QT_QPA_PLATFORM=wayland
+XDG_CURRENT_DESKTOP=labwc:wlroots
+pkill -f "$HOME/.local/bin/lid-monitor"
+"$HOME/.local/bin/lid-monitor" >/dev/null 2>&1 &
+pkill -x qs
+qs >/dev/null 2>&1 &

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <libinput>
+    <device category="default">
+      <accelProfile>flat</accelProfile>
+      <pointerSpeed>0</pointerSpeed>
+    </device>
+  </libinput>
+
+  <desktops number="5" />
+
+  <regions>
+    <region name="code"     x="42%" y="0%"  width="58%" height="100%" />
+    <region name="media"    x="0%"  y="0%"  width="42%" height="60%" />
+    <region name="terminal" x="0%"  y="60%" width="42%" height="40%" />
+  </regions>
+
+  <keyboard>
+    <default />
+    <keybind key="W-Return">
+      <action name="Execute" command="foot" />
+    </keybind>
+    <keybind key="W-1"><action name="GoToDesktop" to="1" /></keybind>
+    <keybind key="W-2"><action name="GoToDesktop" to="2" /></keybind>
+    <keybind key="W-3"><action name="GoToDesktop" to="3" /></keybind>
+    <keybind key="W-4"><action name="GoToDesktop" to="4" /></keybind>
+    <keybind key="W-5"><action name="GoToDesktop" to="5" /></keybind>
+
+    <keybind key="W-D"><action name="Execute" command="qs ipc call menu toggle launcher" /></keybind>
+    <keybind key="W-S-Right"><action name="SnapToRegion" region="code" /></keybind>
+    <keybind key="W-S-Up"><action name="SnapToRegion" region="media" /></keybind>
+    <keybind key="W-S-Down"><action name="SnapToRegion" region="terminal" /></keybind>
+  </keyboard>
+
+  <mouse>
+    <default />
+    <context name="Frame">
+      <mousebind button="W-Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="W-Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="W-Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="W-Right" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+  </mouse>
+</labwc_config>
